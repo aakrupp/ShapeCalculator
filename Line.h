@@ -11,12 +11,12 @@
 #ifndef SHAPEPROJECT_LINE_H
 #define SHAPEPROJECT_LINE_H
 class Line : public Shape {
-public:
+private:
     Point point2;
     double slope;
     double angle;
 
-private:
+public:
     //Constuctors
     //------------------------------------------------------------------------
     Line();

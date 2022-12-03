@@ -38,8 +38,10 @@ double Line::getAngle(){return angle;}
 //Methods
 //------------------------------------------------------------------------
 std::string Line::info(){
-    //FILL IN LATER
-    return "";
+    return "Points: {(" + std::to_string(point.getX()) + "," + std::to_string(point.getY()) + "), ("
+            + std::to_string(point2.getX()) + "," + std::to_string(point2.getY()) + ") \nSlope: "
+            + std::to_string(slope) + "\nAngle: " + std::to_string(angle);
+
 }
 
 double Line::calcSlope(Point p, Point p2){
