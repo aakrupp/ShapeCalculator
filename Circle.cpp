@@ -4,6 +4,7 @@
  * Class: COP 3003, Fall 2022
  * Desc: Shapes Calculator
  * Audit: 1.1.0: 12/03/22: Class creation
+ *        1.1.1: 12/03/22: Class editing, bug fixes with private properties
  ****************************************************************************/
 
 #include "Circle.h"
@@ -12,14 +13,14 @@
 //Constructors
 //------------------------------------------------------------------------
 Circle::Circle(){
-    point = Point(0,0);
+    setPoint(0,0);
     radius = 0;
     diameter = 0;
     circumference = 0;
     area = 0;
 }
-Circle::Circle(int x, int y, int r){
-    point = Point(x, y);
+Circle::Circle(Point p, int r){
+    setPoint(p.getX(), p.getY());
     radius = r;
     diameter = calcDiameter(r);
     circumference = calcCircumference(r);
@@ -44,7 +45,7 @@ int Circle::getArea(){return area;}
  * @return info on the shape
  */
 std::string Circle::info(){
-    return "Center: (" + std::to_string(point.getX()) + "," + std::to_string(point.getY()) + ")\nRadius: "
+    return "Center: (" + std::to_string(getPoint().getX()) + "," + std::to_string(getPoint().getY()) + ")\nRadius: "
             + std::to_string(radius) + "\nDiameter: " + std::to_string(diameter) + "\nCircumference: "
             + std::to_string(circumference) + "\nArea: " + std::to_string(area);
 }

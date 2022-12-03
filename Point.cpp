@@ -4,6 +4,7 @@
  * Class: COP 3003, Fall 2022
  * Desc: Shapes Calculator
  * Audit: 1.1.0: 11/22/22: Class creation
+ *        1.1.1: 12/03/22: Class editing, bug fixes with private properties
  ****************************************************************************/
 
 #include "Point.h"

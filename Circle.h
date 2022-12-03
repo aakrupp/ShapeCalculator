@@ -11,7 +11,7 @@
 #ifndef SHAPEPROJECT_CIRCLE_H
 #define SHAPEPROJECT_CIRCLE_H
 
-class Circle : Shape{
+class Circle : public Shape{
 private:
     int radius;
     double diameter;
@@ -21,7 +21,7 @@ public:
     //Constructors
     //------------------------------------------------------------------------
     Circle();
-    Circle(int x, int y, int r);
+    Circle(Point p, int r);
 
     //Accessors
     //------------------------------------------------------------------------

@@ -6,6 +6,7 @@
  * Audit: 1.3.0: 11/22/22: Class creation
  *        1.3.1: 12/03/22: Class creation. point[2,3,4], perimeter, and area
  *                         field creation. Method completion.
+ *        1.3.2: 12/03/22: Class editing, bug fixes with private properties
  ****************************************************************************/
 
 #include "Rectangle.h"
@@ -13,7 +14,7 @@
 //Constructors
 //------------------------------------------------------------------------
 Rectangle::Rectangle(){
-    point = Point(0,0);
+    setPoint(0, 0);
     point2 = Point(0,0);
     point3 = Point(0,0);
     point4 = Point(0,0);
@@ -23,13 +24,13 @@ Rectangle::Rectangle(){
     area = 0;
 }
 
-Rectangle::Rectangle(int x, int y, int height, int width){
-    point = Point(x,y);
+Rectangle::Rectangle(Point p, int height, int width){
+    setPoint(p.getX(), p.getY());
     this->height = height;
     this->width = width;
-    point2 = calcPoint2(point, height);
-    point3 = calcPoint3(point, height, width);
-    point4 = calcPoint4(point, width);
+    point2 = calcPoint2(getPoint(), height);
+    point3 = calcPoint3(getPoint(), height, width);
+    point4 = calcPoint4(getPoint(), width);
     perimeter = calcPerimeter(width, height);
     area = calcArea(width, height);
 
@@ -56,7 +57,7 @@ Point Rectangle::getPoint4(){return point4;}
  * @return All information on the rectangle
  */
 std::string Rectangle::info(){
-    return "Points: {(" + std::to_string(point.getX()) + "," + std::to_string(point.getY()) + "), ("
+    return "Points: {(" + std::to_string(getPoint().getX()) + "," + std::to_string(getPoint().getY()) + "), ("
             + std::to_string(point2.getX()) + "," + std::to_string(point2.getY()) + "), ("
             + std::to_string(point3.getX()) + "," + std::to_string(point3.getY()) + "), ("
             + std::to_string(point4.getX()) + "," + std::to_string(point4.getY()) + ")}\n Width: "

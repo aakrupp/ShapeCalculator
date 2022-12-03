@@ -12,10 +12,10 @@
 #ifndef SHAPEPROJECT_SHAPE_H
 #define SHAPEPROJECT_SHAPE_H
 class Shape{
-public:
-    Point point;
 private:
-
+    Point point;
+public:
+    Shape();
     //Accessors
     //------------------------------------------------------------------------
     void setPoint(int x, int y);
@@ -24,9 +24,6 @@ private:
     //------------------------------------------------------------------------
     virtual std::string info();
 
-protected:
-//Constructors
-//------------------------------------------------------------------------
-    Shape();
+
 };
 #endif //SHAPEPROJECT_SHAPE_H

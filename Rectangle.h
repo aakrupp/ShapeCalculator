@@ -26,7 +26,7 @@ public:
     //Constructors
     //------------------------------------------------------------------------
     Rectangle();
-    Rectangle(int x, int y, int height, int width);
+    Rectangle(Point p, int height, int width);
 
     //Accessors
     //------------------------------------------------------------------------
