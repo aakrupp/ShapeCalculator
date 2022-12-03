@@ -4,6 +4,8 @@
  * Class: COP 3003, Fall 2022
  * Desc: Shapes Calculator
  * Audit: 1.3.0: 11/22/22: Class creation
+ *        1.3.1: 12/03/22: Class creation. point[2,3,4], perimeter, and area
+ *                         field creation. Method completion.
  ****************************************************************************/
 
 #include "Rectangle.h"
