@@ -49,7 +49,10 @@ int main() {
     do{
 
         std::cout << "Enter number: \n1. Line \n2. Rectangle \n3. Circle \n4. Print \n5. Exit \n> ";
-        std::cin >> userInput;
+        try {
+            std::cin >> userInput;
+            throw exception;
+        }
         switch(userInput){
             case Line_:
                 shapeVector.push_back(createLine());
@@ -80,7 +83,10 @@ Point askForPoint(){
     Point p;
     int x, y;
     std::cout <<"Enter x then y (x space y enter): ";
-    std::cin >> x >> y;
+    try {
+        std::cin >> x >> y;
+        throw exception;
+    }
     p.setX(x);
     p.setY(y);
     std::cout << std::endl;
@@ -108,7 +114,10 @@ Circle* createCircle(){
     Point p = askForPoint();
     std::cout << "Enter the Radius: ";
     int r;
-    std::cin >> r;
+    try {
+        std::cin >> r;
+        throw exception;
+    }
     std::cout << std::endl;
     Circle *c = new Circle(p, r);
     return c;
@@ -123,7 +132,10 @@ Rectangle* createRectangle(){
     Point p = askForPoint();
     std::cout << "Enter Width then Height (width space height enter):";
     int w, h;
-    std::cin >> w >> h;
+    try {
+        std::cin >> w >> h;
+        throw exception;
+    }
     Rectangle *r = new Rectangle(p, h, w);
     return r;
 }
